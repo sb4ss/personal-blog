@@ -11,9 +11,11 @@ const Card: React.FC<CardProps> = ({ title, content, date }) => {
       <div className="row">
         <img src="" alt="image" />
       </div>
-      <p>{date}</p>
-      <h2>{title}</h2>
-      <p>{content}</p>
+      <div className="row2">
+        <p>{date}</p>
+        <h2>{title}</h2>
+        <p>{content}</p>
+      </div>
     </div>
   );
 };

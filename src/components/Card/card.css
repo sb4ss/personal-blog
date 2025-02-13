@@ -9,3 +9,10 @@
   border: 2px solid red;
   position: relative;
 }
+
+.row {
+  background-color: red;
+  height: 95%;
+  border-radius: 20px;
+  width: 200px;
+}
