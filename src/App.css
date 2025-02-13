@@ -1,7 +1,8 @@
 section {
-  width: 800px;
+  padding: 30px;
+  width: 900px;
   height: 100%;
-  background-color: rgba(20, 20, 20, 0.918);
+  background-color: rgb(15, 15, 15);
   z-index: 2;
   position: absolute;
   border: 1px solid rgb(39, 39, 39);
