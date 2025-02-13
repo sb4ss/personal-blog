@@ -6,8 +6,8 @@ function Content() {
     <div className="content">
       <Card
         title="Sample Title"
-        content="Lorem ipsum dolorrem laboriosam magni.
-"
+        content="Lorem ipsum dolorrem laboriosam magni"
+        img="test.webp"
         date="25 dec 2024"
       />
     </div>

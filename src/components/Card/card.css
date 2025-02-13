@@ -6,19 +6,26 @@
   height: 170px;
   border-radius: 30px;
   padding: 20px;
-  border: 2px solid red;
   position: relative;
   gap: 30px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  cursor: pointer;
+  background-color: rgba(22, 22, 22, 0.726);
+  transition: 0.2s;
+  scale: 10px;
 }
 
 .row {
-  background-color: red;
   height: 95%;
   border-radius: 20px;
   width: 300px;
 }
 
 .row img {
+  border-radius: 20px;
   height: 100%;
   width: 100%;
 }
