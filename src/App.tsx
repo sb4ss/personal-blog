@@ -4,7 +4,7 @@ import Content from "./components/Content/Content";
 function App() {
   return (
     <section className="container">
-      <h2>This is a header</h2>
+      <h2>Welcome to my blog</h2>
       <Content />
     </section>
   );
