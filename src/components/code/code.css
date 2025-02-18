@@ -8,6 +8,7 @@
 }
 
 .copy-button {
+  opacity: 80%;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -28,5 +29,6 @@
 }
 
 .copy-button:hover {
+  opacity: 100%;
   background: #f8f8f8;
 }

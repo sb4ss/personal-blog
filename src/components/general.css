@@ -10,13 +10,13 @@
   gap: 20px;
   padding-bottom: 40px;
 }
-p {
+.article-p {
   font-size: 17px;
   text-align: justify;
   width: 70%;
 }
 
-img {
+.article-img {
   margin: 30px;
   height: 100%;
   width: 80%;

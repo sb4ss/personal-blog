@@ -19,13 +19,13 @@ interface CodeBlockProps {
     <section className="container">
       <div className="article">
         <h2>Ejemplo de articulo</h2>
-        <p>
+        <p className="article-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
         </p>
 
-        <p>
+        <p className="article-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
@@ -36,14 +36,14 @@ interface CodeBlockProps {
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
         </p>
-        <p>
+        <p className="article-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
         </p>
-        <img src="img1.png" alt="" />
+        <img className="article-img" src="img1.png" alt="" />
         <CodeBlock code={exampleCode} language="tsx" />
-        <p>
+        <p className="article-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
