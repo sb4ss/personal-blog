@@ -1,13 +1,13 @@
 import "./succes.css";
-import { LuInfo } from "react-icons/lu";
+import { MdOutlineTipsAndUpdates } from "react-icons/md";
 
 interface AlertProps {
   data: string;
 }
 const Succes: React.FC<AlertProps> = ({ data }) => {
   return (
-    <div className="alert">
-      <LuInfo />
+    <div className="succes">
+      <MdOutlineTipsAndUpdates />
       <h3>{data}</h3>
     </div>
   );
