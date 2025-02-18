@@ -1,5 +1,6 @@
 import "../../App.css";
 import "../../components/general.css";
+import CodeBlock from "../../components/code/CodeBlock";
 
 function One() {
   const exampleCode = `
@@ -36,6 +37,7 @@ sayHello();
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
         </p>
         <img src="img1.png" alt="" />
+        <CodeBlock code={exampleCode} language="javascript" />
       </div>
     </section>
   );

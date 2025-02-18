@@ -1,0 +1,27 @@
+.code-container {
+  position: relative;
+  background: #282c34;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 16px;
+  font-family: "Fira Code", monospace;
+}
+
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #61dafb;
+  color: #282c34;
+  border: none;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.copy-button:hover {
+  background: #21a1f1;
+}
