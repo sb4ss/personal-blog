@@ -9,6 +9,7 @@
   position: relative;
   gap: 30px;
   transition: 0.2s;
+  text-decoration: none;
 }
 
 .card:hover {

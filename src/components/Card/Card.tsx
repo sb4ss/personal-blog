@@ -5,10 +5,11 @@ interface CardProps {
   content: string;
   date: string;
   img: string;
+  url: string;
 }
-const Card: React.FC<CardProps> = ({ title, content, date, img }) => {
+const Card: React.FC<CardProps> = ({ title, content, date, img, url }) => {
   return (
-    <div className="card">
+    <a className="card" href={`${url}`}>
       <div className="row">
         <img src={img} alt="image" />
       </div>
@@ -17,7 +18,7 @@ const Card: React.FC<CardProps> = ({ title, content, date, img }) => {
         <h2>{title}</h2>
         <p>{content}</p>
       </div>
-    </div>
+    </a>
   );
 };
 
