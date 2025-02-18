@@ -28,7 +28,11 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         <LuClipboardCopy />
         {copied ? "Copied!" : "Copy"}
       </button>
-      <SyntaxHighlighter language={language} style={oneDark}>
+      <SyntaxHighlighter
+        language={language}
+        style={oneDark}
+        showLineNumbers={true}
+      >
         {code}
       </SyntaxHighlighter>
     </div>
