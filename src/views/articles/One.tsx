@@ -2,6 +2,13 @@ import "../../App.css";
 import "../../components/general.css";
 
 function One() {
+  const exampleCode = `
+function sayHello() {
+  console.log("Hello, world!");
+}
+sayHello();
+  `;
+
   return (
     <section className="container">
       <div className="article">
