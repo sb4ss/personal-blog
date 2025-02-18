@@ -1,17 +1,17 @@
-.alert {
+.error {
   width: 70%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(160, 94, 32, 0.808);
+  background-color: rgba(160, 32, 32, 0.527);
   border-radius: 10px;
-  border-top: 10px solid rgb(255, 145, 0);
+  border-top: 10px solid rgb(255, 0, 0);
   opacity: 90%;
   gap: 10px;
 }
 
-.alert h3 {
+.error h3 {
   width: 90%;
   text-align: justify;
 

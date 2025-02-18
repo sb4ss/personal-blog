@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(38, 134, 30);
+  background-color: rgba(39, 134, 30, 0.829);
   border-radius: 10px;
   border-top: 10px solid rgb(40, 228, 33);
   opacity: 90%;

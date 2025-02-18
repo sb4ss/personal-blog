@@ -3,6 +3,7 @@ import "../../components/general.css";
 import CodeBlock from "../../components/code/CodeBlock";
 import Alert from "../../components/info/Alert";
 import Succes from "../../components/info/Succes";
+import Error from "../../components/info/Error";
 
 function One() {
   const exampleCode = `import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -53,9 +54,11 @@ interface CodeBlockProps {
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
         </p>
         <CodeBlock code={exampleCode} language="tsx" />
-        <Succes data="orem ipsum dolor sit amet consectetur adipisicing elit. Velit,orem ipsum dolor sit amet consectetur adipisicing elit. Velit," />
+        <Succes data="Avaliable to SO " />
 
         <CodeBlock code={exampleCode} language="tsx" />
+
+        <Error data="Un error ha ocurrido" />
       </div>
     </section>
   );

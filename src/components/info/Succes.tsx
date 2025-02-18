@@ -1,10 +1,10 @@
 import "./succes.css";
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
 
-interface AlertProps {
+interface SuccesProps {
   data: string;
 }
-const Succes: React.FC<AlertProps> = ({ data }) => {
+const Succes: React.FC<SuccesProps> = ({ data }) => {
   return (
     <div className="succes">
       <MdOutlineTipsAndUpdates />
