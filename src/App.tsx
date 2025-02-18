@@ -1,13 +1,8 @@
-import "./App.css";
-import Content from "./components/Content/Content";
+import { RouterProvider } from "react-router-dom";
+import router from "../src/routes";
 
 function App() {
-  return (
-    <section className="container">
-      <h2>Welcome to my blog</h2>
-      <Content />
-    </section>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
