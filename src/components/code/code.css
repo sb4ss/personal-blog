@@ -1,17 +1,22 @@
 .code-container {
   position: relative;
-  background: #282c34;
-  border-radius: 8px;
+  background: #49494910;
+  border-radius: 0px;
   overflow: hidden;
-  padding: 16px;
+  padding: 20px;
   font-family: "Fira Code", monospace;
 }
 
 .copy-button {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
   position: absolute;
   top: 10px;
   right: 10px;
-  background: #61dafb;
+  background: #dddddd;
   color: #282c34;
   border: none;
   padding: 6px 10px;
@@ -23,5 +28,5 @@
 }
 
 .copy-button:hover {
-  background: #21a1f1;
+  background: #f8f8f8;
 }

@@ -26,7 +26,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
     <div className="code-container">
       <button className="copy-button" onClick={handleCopy}>
         <LuClipboardCopy />
-        {copied ? "Copiado!" : "Copiar"}
+        {copied ? "Copied!" : "Copy"}
       </button>
       <SyntaxHighlighter language={language} style={oneDark}>
         {code}
