@@ -1,6 +1,6 @@
 section {
   width: 900px;
-  height: 100%;
+  height: auto;
   background-color: rgb(29, 29, 29);
   z-index: 2;
   position: absolute;
