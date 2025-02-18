@@ -1,4 +1,4 @@
-.alert {
+.succes {
   width: 70%;
   height: auto;
   display: flex;
@@ -11,7 +11,7 @@
   gap: 10px;
 }
 
-.alert h3 {
+.succes h3 {
   width: 90%;
   text-align: justify;
 

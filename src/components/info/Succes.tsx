@@ -1,10 +1,10 @@
-import "./alert.css";
+import "./succes.css";
 import { LuInfo } from "react-icons/lu";
 
 interface AlertProps {
   data: string;
 }
-const Alert: React.FC<AlertProps> = ({ data }) => {
+const Succes: React.FC<AlertProps> = ({ data }) => {
   return (
     <div className="alert">
       <LuInfo />
@@ -12,4 +12,4 @@ const Alert: React.FC<AlertProps> = ({ data }) => {
     </div>
   );
 };
-export default Alert;
+export default Succes;

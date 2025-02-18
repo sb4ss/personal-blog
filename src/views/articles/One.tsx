@@ -1,6 +1,7 @@
 import "../../App.css";
 import "../../components/general.css";
 import CodeBlock from "../../components/code/CodeBlock";
+import Alert from "../../components/info/Alert";
 
 function One() {
   const exampleCode = `import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -36,6 +37,8 @@ interface CodeBlockProps {
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
         </p>
+        <Alert data="orem ipsum dolor sit amet consectetur adipisicing elit. Velit,orem ipsum dolor sit amet consectetur adipisicing elit. Velit," />
+
         <p className="article-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
