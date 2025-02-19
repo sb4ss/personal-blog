@@ -8,7 +8,7 @@ function Home() {
       className="container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.4 }}
     >
       <h2>Welcome to my blog</h2>
       <Content />
