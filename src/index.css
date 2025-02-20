@@ -25,21 +25,38 @@ html {
 }
 
 #root {
+  position: absolute;
+
   height: 100%;
-  margin: 0 auto;
-  text-align: center;
   width: 100%;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
   display: flex;
   justify-content: center;
+  transition: transform 0.5s ease-in-out;
+  animation: flow 0.5s forwards;
+}
+
+@keyframes flow {
+  0% {
+    left: 0%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 body {
-  background-color: rgb(131, 76, 76);
-  height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100vh;
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* background-color: #252525; #00b551 */
