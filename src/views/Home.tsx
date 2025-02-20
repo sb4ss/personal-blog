@@ -10,7 +10,11 @@ function Home() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <h2>Welcome to my blog</h2>
+      <h2>Articles by Sb4ss</h2>
+      <p>
+        This project is linked to my portfolio,
+        <a href="https://sb4ss.vercel.app"> go check it out.</a>
+      </p>
       <Content />
     </motion.div>
   );
