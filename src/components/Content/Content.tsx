@@ -19,6 +19,27 @@ function Content() {
         date="25 dec 2024"
         url="two"
       />
+      <Card
+        title="Sample Title"
+        content="Lorem ipsum dolorrem laboriosam magni"
+        img="test.webp"
+        date="25 dec 2024"
+        url="two"
+      />
+      <Card
+        title="Sample Title"
+        content="Lorem ipsum dolorrem laboriosam magni"
+        img="test.webp"
+        date="25 dec 2024"
+        url="two"
+      />
+      <Card
+        title="Sample Title"
+        content="Lorem ipsum dolorrem laboriosam magni"
+        img="test.webp"
+        date="25 dec 2024"
+        url="two"
+      />
     </div>
   );
 }

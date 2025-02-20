@@ -14,7 +14,7 @@
 
 html {
   --s: 200px; /* control the size*/
-  --c1: #1b1b1b;
+  --c1: #1b1b1b8c;
   --c2: #070707;
 
   --_g: #0000 90deg, var(--c1) 0;
