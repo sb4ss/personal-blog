@@ -14,7 +14,7 @@ function Home() {
         <h2 className="title">Articles by Sb4ss</h2>
       </div>
       <p>
-        This project is linked to my portfolio,
+        This project is linked to my portfolio
         <a href="https://sb4ss.vercel.app"> go check it out.</a>
       </p>
       <Content />
