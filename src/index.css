@@ -13,14 +13,15 @@
 }
 
 html {
-  --s: 200px; /* control the size*/
-  --c1: #1b1b1b8c;
-  --c2: #070707;
+  --s: 200px; /* Controla el tamaño */
+  --c1: #1b1b1b96;
+  --c2: #0f0f0fa4;
 
   --_g: #0000 90deg, var(--c1) 0;
   background: conic-gradient(from 90deg at 1px 1px, var(--_g)),
     conic-gradient(from 90deg at 1px 1px, var(--_g)), var(--c2);
   background-size: var(--s) var(--s), calc(var(--s) / 5) calc(var(--s) / 5);
+  background-blend-mode: lighten; /* Hace que el color más claro resalte */
 }
 
 #root {
@@ -41,4 +42,4 @@ body {
   min-width: 320px;
 }
 
-/* background-color: #252525; */
+/* background-color: #252525; #00b551 */
