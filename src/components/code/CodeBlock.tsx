@@ -8,11 +8,13 @@ import "./code.css"; // Asegúrate de importar el CSS
 interface CodeBlockProps {
   code: string;
   language?: string; // Opcional, por defecto será "javascript"
+  filename: string;
 }
 
 const CodeBlock: React.FC<CodeBlockProps> = ({
   code,
   language = "javascript",
+  filename,
 }) => {
   const [copied, setCopied] = useState(false);
 
@@ -24,6 +26,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
 
   return (
     <div className="code-container">
+      {filename && <div className="code-filename">{filename}</div>}
       <button className="copy-button" onClick={handleCopy}>
         <LuClipboardCopy />
         {copied ? "Copied!" : "Copy"}

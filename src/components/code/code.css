@@ -1,10 +1,17 @@
 .code-container {
   position: relative;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
   background: #49494910;
   border-radius: 0px;
   overflow: hidden;
   padding: 20px;
   font-family: "Fira Code", monospace;
+}
+
+.code-filename {
+  margin-bottom: 5px;
 }
 
 .copy-button {

@@ -50,16 +50,16 @@ interface CodeBlockProps {
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
         </p>
-        <CodeBlock code={exampleCode} language="tsx" />
+        <CodeBlock code={exampleCode} language="tsx" filename="ejemplo.tsx" />
         <p className="article-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
         </p>
-        <CodeBlock code={exampleCode} language="tsx" />
+        <CodeBlock code={exampleCode} language="tsx" filename="ejemplo.tsx" />
         <Succes data="Avaliable to SO " />
 
-        <CodeBlock code={exampleCode} language="tsx" />
+        <CodeBlock code={exampleCode} language="tsx" filename="rutas.tsx" />
 
         <Error data="Un error ha ocurrido" />
       </div>
