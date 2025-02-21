@@ -52,3 +52,28 @@ p a:hover::after {
   height: 100%;
   z-index: -1;
 }
+
+.title-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.porfile {
+  cursor: pointer;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 20px;
+  width: 50%;
+  background-color: rgb(36, 36, 36);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.porfile img {
+  border-radius: 80px;
+  height: 60px;
+  padding: 10px;
+  width: 70px;
+}
