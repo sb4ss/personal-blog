@@ -2,7 +2,7 @@ import NotFound from "./NotFound.tsx";
 import Home from "./views/Home.tsx";
 import { useLocation } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import Two from "./views/articles/two.tsx";
+import Two from "./views/articles/Two.tsx";
 
 function RoutesWithAnimation() {
   const location = useLocation();
