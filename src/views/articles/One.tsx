@@ -5,6 +5,7 @@ import Alert from "../../components/info/Alert";
 import Succes from "../../components/info/Succes";
 import Error from "../../components/info/Error";
 import { motion } from "motion/react";
+import Back from "../../components/Back";
 
 function One() {
   const exampleCode = `import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -27,6 +28,7 @@ interface CodeBlockProps {
       transition={{ duration: 0.4 }}
     >
       <div className="article">
+        <Back />
         <h2>Ejemplo de articulo</h2>
         <p className="article-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
