@@ -59,21 +59,85 @@ p a:hover::after {
   justify-content: center;
 }
 
-.porfile {
+.profile {
+  border: none;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 20px;
   padding: 10px;
   margin: 20px;
-  width: 50%;
-  background-color: rgb(36, 36, 36);
+  width: 30%;
+  background-color: #20232c;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
+}
+.user {
+  display: flex;
+  align-items: center;
+  justify-self: center;
 }
 
-.porfile img {
-  border-radius: 80px;
-  height: 60px;
-  padding: 10px;
-  width: 70px;
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile img {
+  margin-right: 10px;
+  border-radius: 40px;
+  height: 40px;
+  width: 50px;
+}
+
+.profile .online {
+  margin: 10px;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #00dd63;
+  box-shadow: 0px 0px 8px 2px #00ff73;
+  animation: glow 4s infinite alternate ease-in-out;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0px 0px 6px 1px rgba(0, 255, 115, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0px 0px 10px 3px rgba(0, 255, 115, 0.8);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0px 0px 15px 5px rgba(0, 255, 115, 0.4);
+    transform: scale(1);
+  }
+}
+
+.discord {
+  margin: 10px;
+  font-size: 30px;
+  color: #5575e7;
+}
+
+.profile-section {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: auto;
+}
+
+.overlay {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98vw;
+  height: 98vw;
+  background: rgba(0, 0, 0, 0.192); /* Oscurece el fondo */
+  backdrop-filter: blur(3px); /* Le da un ligero desenfoque */
+  z-index: 10;
 }

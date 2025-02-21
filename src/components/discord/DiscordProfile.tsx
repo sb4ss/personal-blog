@@ -1,7 +1,7 @@
 import test from "../../../public/test.webp";
 import { DiscordPresence } from "react-discord-presence";
 
-function DiscordPorfile() {
+function DiscordProfile() {
   return (
     <DiscordPresence
       args={{ developerId: "741020084113244180" }}
@@ -13,4 +13,4 @@ function DiscordPorfile() {
   );
 }
 
-export default DiscordPorfile;
+export default DiscordProfile;
