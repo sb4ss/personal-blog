@@ -8,7 +8,7 @@ function RoutesWithAnimation() {
   const location = useLocation();
 
   return (
-    <Routes location={location} key={location.key}>
+    <Routes location={location}>
       <Route path="/" element={<Home />} />
       <Route path="/one" element={<One />} />
       <Route path="/two" element={<Two />} />
