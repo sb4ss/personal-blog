@@ -5,9 +5,6 @@ import Succes from "../../components/info/Succes";
 import Error from "../../components/info/Error";
 import { motion } from "motion/react";
 import Back from "../../components/Back";
-import test from "../../../public/test.webp";
-
-import { DiscordPresence } from "react-discord-presence";
 
 function Two() {
   const exampleCode = `import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -65,14 +62,6 @@ interface CodeBlockProps {
 
         <Error data="Un error ha ocurrido" />
       </div>
-
-      <DiscordPresence
-        args={{ developerId: "741020084113244180" }}
-        data={{
-          memberSince: new Date("8/6/2020"),
-        }}
-        formatBannerImageSrc={() => test}
-      />
     </motion.div>
   );
 }
