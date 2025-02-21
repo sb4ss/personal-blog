@@ -9,7 +9,7 @@ interface CardProps {
 }
 const Card: React.FC<CardProps> = ({ title, content, date, img, url }) => {
   return (
-    <a className="card" href={`${url}`}>
+    <a className="card" href={`/${url}`}>
       <div className="row">
         <img src={img} alt="image" />
       </div>
