@@ -5,7 +5,9 @@ import Succes from "../../components/info/Succes";
 import Error from "../../components/info/Error";
 import { motion } from "motion/react";
 import Back from "../../components/Back";
-import { Link } from "react-router-dom";
+import test from "../../../public/test.webp";
+
+import { DiscordPresence } from "react-discord-presence";
 
 function Two() {
   const exampleCode = `import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -40,9 +42,9 @@ interface CodeBlockProps {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
           nesciunt vel voluptatem voluptatibus dolore ipsum beatae fugit quos
           saepe dicta cumque quo sed, ea amet aliquid doloremque quis ab. Modi?
-          Lorem ipsum dolor sit amet <Link to="/two"> click qui </Link>
-          consectetur adipisicing elit. Velit, nesciunt vel voluptatem umque quo
-          sed, ea amet aliquid doloremque quis ab. Modi?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
+          nesciunt vel voluptatem umque quo sed, ea amet aliquid doloremque quis
+          ab. Modi?
         </p>
 
         <p className="article-p">
@@ -63,6 +65,14 @@ interface CodeBlockProps {
 
         <Error data="Un error ha ocurrido" />
       </div>
+
+      <DiscordPresence
+        args={{ developerId: "741020084113244180" }}
+        data={{
+          memberSince: new Date("8/6/2020"),
+        }}
+        formatBannerImageSrc={() => test}
+      />
     </motion.div>
   );
 }
