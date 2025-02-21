@@ -7,14 +7,18 @@ import DiscordProfile from "../components/discord/DiscordProfile";
 
 function Home() {
   const [profile, setProfile] = useState(false);
-  const profileRef = useRef(null);
+  const profileRef = useRef<HTMLDivElement>(null);
 
   const handleUserDiscord = () => {
     setProfile(true);
   };
 
-  const handleClickOutside = (event) => {
-    if (profileRef.current && !profileRef.current.contains(event.target)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      profileRef.current &&
+      profileRef.current instanceof HTMLElement &&
+      !profileRef.current.contains(event.target as Node)
+    ) {
       setProfile(false);
     }
   };
