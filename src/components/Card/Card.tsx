@@ -1,5 +1,5 @@
 import "./card.css";
-
+import { Link } from "react-router-dom";
 interface CardProps {
   title: string;
   content: string;
@@ -9,7 +9,7 @@ interface CardProps {
 }
 const Card: React.FC<CardProps> = ({ title, content, date, img, url }) => {
   return (
-    <a className="card" href={url}>
+    <Link className="card" to={`/${url}`}>
       <div className="row">
         <img src={img} alt="image" />
       </div>
@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({ title, content, date, img, url }) => {
         <h2>{title}</h2>
         <p>{content}</p>
       </div>
-    </a>
+    </Link>
   );
 };
 
