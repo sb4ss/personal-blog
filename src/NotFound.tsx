@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import "./App.css";
+import "./notfound.css";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
