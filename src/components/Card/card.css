@@ -53,7 +53,7 @@ p {
 @media (max-width: 575px) {
   .card {
     gap: 20px;
-    width: 400px;
+    width: 300px;
     flex-direction: column;
     height: 400px;
     padding: 40px;

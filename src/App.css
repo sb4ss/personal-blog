@@ -177,6 +177,9 @@ p a:hover::after {
   .title {
     margin: 10px;
   }
+  .link {
+    font-size: 12px;
+  }
   .title-bg {
     flex-direction: column;
   }
@@ -184,6 +187,7 @@ p a:hover::after {
     width: auto;
   }
   .profile {
+    font-size: 12px;
     width: 70%;
   }
 }

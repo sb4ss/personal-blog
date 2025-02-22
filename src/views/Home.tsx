@@ -91,7 +91,7 @@ function Home() {
         </>
       )}
 
-      <p>
+      <p className="link">
         This project is linked to my portfolio
         <a href="https://sb4ss.vercel.app"> go check it out.</a>
       </p>
