@@ -7,21 +7,29 @@ import DiscordProfile from "../components/discord/DiscordProfile";
 
 function Home() {
   const [profile, setProfile] = useState(false);
-  const [status, setStatus] = useState("Online");
+  const [statusClass, setStatusClass] = useState("Online");
   const profileRef = useRef<HTMLDivElement>(null);
+  const [status, setStatus] = useState("null");
 
   useEffect(() => {
     fetch("https://api.lanyard.rest/v1/users/741020084113244180")
       .then((res) => res.json())
       .then((data) => {
         if (data?.data?.discord_status == "online") {
+          setStatusClass("Online");
           setStatus("Online");
         }
         if (data?.data?.discord_status == "idle") {
+          setStatusClass("Idle");
           setStatus("Idle");
         }
         if (data?.data?.discord_status == "dnd") {
-          setStatus("Dnd");
+          setStatusClass("Dnd");
+          setStatus("Do Not Disturb");
+        }
+        if (data?.data?.discord_status == "offline") {
+          setStatusClass("Offline");
+          setStatus("Offline");
         }
       });
   }, []);
@@ -69,7 +77,7 @@ function Home() {
 
           <div className="status">
             <p>{status}</p>
-            <div className={status}></div>
+            <div className={statusClass}></div>
             <FaDiscord className="discord" />
           </div>
         </button>
