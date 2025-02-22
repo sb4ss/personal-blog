@@ -56,8 +56,18 @@ p {
 /* Dispositivos medianos (tablets, 576px a 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
   .card {
-    background-color: green;
+    width: 300px;
     flex-direction: column;
+    height: 400px;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .row {
+    height: 100%;
+    border-radius: 20px;
+    width: 300px;
   }
 }
 
