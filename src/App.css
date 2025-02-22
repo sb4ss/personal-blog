@@ -65,7 +65,7 @@ p a:hover::after {
   border-radius: 20px;
   padding: 10px;
   margin: 20px;
-  width: 40%;
+  width: 300px;
   background-color: #20232c;
   display: flex;
   align-items: center;

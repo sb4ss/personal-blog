@@ -1,5 +1,5 @@
-import "../../App.css";
 import "../../components/general.css";
+import "../../App.css";
 import CodeBlock from "../../components/code/CodeBlock";
 import Succes from "../../components/info/Succes";
 import Error from "../../components/info/Error";

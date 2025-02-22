@@ -37,6 +37,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         showLineNumbers={true}
         wrapLongLines={true}
         wrapLines={true}
+        className="code-movile"
       >
         {code}
       </SyntaxHighlighter>

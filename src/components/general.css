@@ -28,10 +28,14 @@
 }
 
 @media (max-width: 575px) {
-  .article {
-    display: flex;
-    width: 100%;
+  .container {
     align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .article-p {
+    font-size: 12px;
   }
 }
 

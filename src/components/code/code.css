@@ -72,3 +72,8 @@ pre {
     font-size: 12px;
   }
 }
+
+.code-movile {
+  font-size: 12px;
+  width: 90%;
+}
