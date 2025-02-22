@@ -1,4 +1,4 @@
-import test from "../../../public/test.webp";
+import banner from "../../../public/banner.png";
 import { DiscordPresence } from "react-discord-presence";
 
 function DiscordProfile() {
@@ -8,7 +8,7 @@ function DiscordProfile() {
       data={{
         memberSince: new Date("8/6/2020"),
       }}
-      formatBannerImageSrc={() => test}
+      formatBannerImageSrc={() => banner}
     />
   );
 }

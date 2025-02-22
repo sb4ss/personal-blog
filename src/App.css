@@ -160,7 +160,7 @@ p a:hover::after {
   height: 15px;
   border-radius: 50%;
   background-color: #ffc830;
-  box-shadow: 0px 0px 8px 2px #ffc8307a;
+  box-shadow: 0px 0px 30px 2px #ffc8307a;
 }
 
 .profile .Dnd {
@@ -170,5 +170,5 @@ p a:hover::after {
   height: 15px;
   border-radius: 50%;
   background-color: #ff3030;
-  box-shadow: 0px 0px 8px 2px #ff30307a;
+  box-shadow: 0px 0px 30px 2px #ff30307a;
 }
