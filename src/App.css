@@ -54,18 +54,19 @@ p a:hover::after {
 }
 
 .title-bg {
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .profile {
+  width: 400px;
   border: none;
   cursor: pointer;
   border-radius: 20px;
   padding: 10px;
   margin: 20px;
-  width: 300px;
   background-color: #20232c;
   display: flex;
   align-items: center;
@@ -178,19 +179,19 @@ p a:hover::after {
     margin: 0;
     margin-top: 20px;
   }
-}
-.link {
-  font-size: 12px;
-}
-.title-bg {
-  flex-direction: column;
-}
-.container {
-  width: auto;
-}
-.profile {
-  font-size: 12px;
-  width: 270px;
+  .link {
+    font-size: 12px;
+  }
+  .title-bg {
+    flex-direction: column;
+  }
+  .container {
+    width: auto;
+  }
+  .profile {
+    font-size: 12px;
+    width: 270px;
+  }
 }
 
 /* Dispositivos medianos (tablets, 576px a 767px) */
@@ -213,6 +214,11 @@ p a:hover::after {
 
 /* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
+  .title {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
   .title-bg {
     flex-direction: column;
   }
@@ -220,6 +226,6 @@ p a:hover::after {
     width: auto;
   }
   .profile {
-    width: 60%;
+    width: 400px;
   }
 }
