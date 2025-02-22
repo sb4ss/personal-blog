@@ -172,3 +172,41 @@ p a:hover::after {
   background-color: #ff3030;
   box-shadow: 0px 0px 30px 2px #ff30307a;
 }
+
+@media (max-width: 575px) {
+  .title-bg {
+    flex-direction: column;
+  }
+  .container {
+    width: auto;
+  }
+  .profile {
+    width: 70%;
+  }
+}
+
+/* Dispositivos medianos (tablets, 576px a 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .title-bg {
+    flex-direction: column;
+  }
+  .container {
+    width: auto;
+  }
+  .profile {
+    width: 60%;
+  }
+}
+
+/* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .title-bg {
+    flex-direction: column;
+  }
+  .container {
+    width: auto;
+  }
+  .profile {
+    width: 60%;
+  }
+}

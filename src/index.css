@@ -59,4 +59,24 @@ body {
   align-items: center;
 }
 
+@media (max-width: 575px) {
+  .title-bg {
+    flex-direction: column;
+  }
+}
+
+/* Dispositivos medianos (tablets, 576px a 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .title-bg {
+    flex-direction: column;
+  }
+}
+
+/* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .title-bg {
+    flex-direction: column;
+  }
+}
+
 /* background-color: #252525; #00b551 */
