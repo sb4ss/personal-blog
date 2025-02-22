@@ -12,23 +12,12 @@
 
 /* Dispositivos pequeños (teléfonos en vertical, menos de 576px) */
 @media (max-width: 575px) {
-  body {
-    background-color: lightblue;
-  }
 }
 
 /* Dispositivos medianos (tablets, 576px a 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
-  body {
-    background-color: lightgreen;
-  }
 }
 
 /* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
-  .content {
-    background-color: red;
-  }
 }
-
-/* Dispositivos extra grandes (desktops, 992px o más) */
