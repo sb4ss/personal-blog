@@ -35,6 +35,8 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         language={language}
         style={oneDark}
         showLineNumbers={true}
+        wrapLongLines={true}
+        wrapLines={true}
       >
         {code}
       </SyntaxHighlighter>

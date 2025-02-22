@@ -21,3 +21,29 @@
   height: 100%;
   width: 80%;
 }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .article {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* Dispositivos medianos (tablets, 576px a 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .article {
+    display: flex;
+    width: 90%;
+    align-items: center;
+  }
+}
+
+/* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+}

@@ -1,41 +1,74 @@
 .code-container {
   position: relative;
   display: flex;
-  align-items: start;
   flex-direction: column;
-  background: #49494910;
-  border-radius: 0px;
-  overflow: hidden;
-  padding: 20px;
-  font-family: "Fira Code", monospace;
-}
-
-.code-filename {
-  margin-bottom: 5px;
-}
-
-.copy-button {
-  opacity: 80%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 3px;
+  background: rgba(73, 73, 73, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: "Fira Code", monospace;
+  width: 800px;
+  max-width: 100%;
+  overflow: hidden; /* Evita desbordamiento no deseado */
+}
+
+/* Estilo del nombre del archivo */
+.code-filename {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffffcc; /* Blanco con transparencia */
+}
+
+/* Botón de copiado */
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #dddddd;
+  top: 12px;
+  right: 12px;
+  background: #e0e0e0;
   color: #282c34;
   border: none;
-  padding: 6px 10px;
+  padding: 6px 12px;
   font-size: 14px;
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
 }
 
 .copy-button:hover {
-  opacity: 100%;
-  background: #f8f8f8;
+  opacity: 1;
+  background: #d6d6d6;
+}
+
+/* Ajuste del código para evitar desbordamiento */
+pre {
+  white-space: pre-wrap; /* Permite saltos de línea en palabras largas */
+  word-wrap: break-word; /* Rompe palabras si es necesario */
+  overflow-x: auto; /* Si el código es muy largo, permite scroll horizontal */
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* Hacer el botón más visible en pantallas pequeñas */
+@media (max-width: 600px) {
+  .copy-button {
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .code-container {
+    width: 95%;
+  }
+
+  .code-filename {
+    font-size: 12px;
+  }
 }

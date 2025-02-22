@@ -4,6 +4,7 @@ import Content from "../components/Content/Content";
 import { FaDiscord } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 import DiscordProfile from "../components/discord/DiscordProfile";
+import "../components/general.css";
 
 function Home() {
   const [profile, setProfile] = useState(false);
