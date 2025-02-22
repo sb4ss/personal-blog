@@ -191,7 +191,7 @@ p a:hover::after {
     flex-direction: column;
   }
   .container {
-    width: auto;
+    width: 100%;
   }
   .profile {
     width: 60%;
