@@ -175,21 +175,22 @@ p a:hover::after {
 
 @media (max-width: 575px) {
   .title {
-    margin: 10px;
+    margin: 0;
+    margin-top: 20px;
   }
-  .link {
-    font-size: 12px;
-  }
-  .title-bg {
-    flex-direction: column;
-  }
-  .container {
-    width: auto;
-  }
-  .profile {
-    font-size: 12px;
-    width: 70%;
-  }
+}
+.link {
+  font-size: 12px;
+}
+.title-bg {
+  flex-direction: column;
+}
+.container {
+  width: auto;
+}
+.profile {
+  font-size: 12px;
+  width: 270px;
 }
 
 /* Dispositivos medianos (tablets, 576px a 767px) */
@@ -201,7 +202,12 @@ p a:hover::after {
     width: 100%;
   }
   .profile {
-    width: 60%;
+    font-size: 12px;
+    width: 300px;
+  }
+  .title {
+    margin: 0;
+    margin-top: 20px;
   }
 }
 
