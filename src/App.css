@@ -90,7 +90,7 @@ p a:hover::after {
   width: 50px;
 }
 
-.profile .online {
+.profile .Online {
   margin: 10px;
   position: relative;
   width: 15px;
@@ -132,6 +132,7 @@ p a:hover::after {
 }
 
 .overlay {
+  top: 0;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -140,4 +141,23 @@ p a:hover::after {
   background: rgba(0, 0, 0, 0.192); /* Oscurece el fondo */
   backdrop-filter: blur(3px); /* Le da un ligero desenfoque */
   z-index: 10;
+}
+
+.profile .Offline {
+  margin: 10px;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #616161;
+}
+
+.profile .Idle {
+  margin: 10px;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffc830;
+  box-shadow: 0px 0px 8px 2px #ffc8307a;
 }

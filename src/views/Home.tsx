@@ -7,7 +7,24 @@ import DiscordProfile from "../components/discord/DiscordProfile";
 
 function Home() {
   const [profile, setProfile] = useState(false);
+  const [status, setStatus] = useState("Online");
   const profileRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    fetch("https://api.lanyard.rest/v1/users/741020084113244180")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.data?.discord_status == "online") {
+          setStatus("Online");
+        }
+        if (data?.data?.discord_status == "idle") {
+          setStatus("Idle");
+        }
+        if (data?.data?.discord_status == "dnd") {
+          setStatus("Dnd");
+        }
+      });
+  }, []);
 
   const handleUserDiscord = () => {
     setProfile(true);
@@ -51,8 +68,8 @@ function Home() {
           </div>
 
           <div className="status">
-            <p>Online</p>
-            <div className="online"></div>
+            <p>{status}</p>
+            <div className={status}></div>
             <FaDiscord className="discord" />
           </div>
         </button>
