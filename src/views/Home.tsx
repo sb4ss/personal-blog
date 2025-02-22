@@ -9,7 +9,7 @@ function Home() {
   const [profile, setProfile] = useState(false);
   const [statusClass, setStatusClass] = useState("Online");
   const profileRef = useRef<HTMLDivElement>(null);
-  const [status, setStatus] = useState("null");
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     fetch("https://api.lanyard.rest/v1/users/741020084113244180")
@@ -33,7 +33,6 @@ function Home() {
         }
       });
   }, []);
-
   const handleUserDiscord = () => {
     setProfile(true);
   };
