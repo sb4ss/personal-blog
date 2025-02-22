@@ -14,7 +14,7 @@ function Content() {
 
       <Card
         title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
+        content="Lorem ipadasdadsasd asdaaaaaaaa aaaaaaa aaaa aaaaaaa aaaaaum dolorrem laboriosam magni"
         img="test.webp"
         date="25 dec 2024"
         url="two"

@@ -51,29 +51,83 @@ p {
 }
 
 @media (max-width: 575px) {
+  .card {
+    gap: 20px;
+    width: 500px;
+    flex-direction: column;
+    height: 400px;
+    padding: 40px;
+    justify-content: center;
+  }
+
+  .row {
+    width: 100%;
+  }
+
+  .row2 {
+    gap: 10px;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .row2 h2,
+  p {
+    color: rgb(221, 221, 221);
+    margin: 0;
+  }
+
+  .row2 p {
+    width: 90%;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    text-align: start;
+    color: rgba(179, 179, 179, 0.589);
+  }
 }
 
 /* Dispositivos medianos (tablets, 576px a 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
   .card {
-    width: 300px;
+    gap: 20px;
+    width: 500px;
     flex-direction: column;
     height: 400px;
     padding: 40px;
-    align-items: center;
     justify-content: center;
   }
 
   .row {
-    height: 100%;
-    border-radius: 20px;
-    width: 300px;
+    width: 100%;
+  }
+
+  .row2 {
+    gap: 10px;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .row2 h2,
+  p {
+    color: rgb(221, 221, 221);
+    margin: 0;
+  }
+
+  .row2 p {
+    width: 90%;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    text-align: start;
+    color: rgba(179, 179, 179, 0.589);
   }
 }
 
 /* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
-  .card {
-    background-color: red;
+  .row2 p {
+    width: 90%;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    text-align: start;
+    color: rgba(179, 179, 179, 0.589);
   }
 }
