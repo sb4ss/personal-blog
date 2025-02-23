@@ -5,103 +5,11 @@ function Content() {
   return (
     <div className="content">
       <Card
-        title="Sample Title"
-        content="Lorem ipsum dolorrem laboriosam magni"
+        title="React Router con animaciones"
+        content="La forma más facil de añadir transisiones a tu aplicación React"
         img="test.webp"
-        date="25 dec 2024"
-        url="one"
-      />
-
-      <Card
-        title="two"
-        content="Lorem ipadasdadsasd asdaaaaaaaa aaaaaaa aaaa aaaaaaa aaaaaum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
-      />
-      <Card
-        title="two"
-        content="Lorem ipsum dolorrem laboriosam magni"
-        img="test.webp"
-        date="25 dec 2024"
-        url="two"
+        date="23 feb 2025"
+        url="article-react-router-animaciones"
       />
     </div>
   );

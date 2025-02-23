@@ -7,9 +7,16 @@
   border-radius: 8px;
   padding: 16px;
   font-family: "Fira Code", monospace;
-  width: 800px;
+  width: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+
   max-width: 100%;
   overflow: hidden; /* Evita desbordamiento no deseado */
+}
+
+.code-movile {
+  width: 800px;
 }
 
 /* Estilo del nombre del archivo */
@@ -71,9 +78,22 @@ pre {
   .code-filename {
     font-size: 12px;
   }
+  .code-movile {
+    font-size: 12px;
+    width: 90%;
+  }
 }
 
-.code-movile {
-  font-size: 12px;
-  width: 90%;
+/* Dispositivos medianos (tablets, 576px a 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .code-movile {
+    width: 500px;
+  }
+}
+
+/* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .code-movile {
+    width: 600px;
+  }
 }

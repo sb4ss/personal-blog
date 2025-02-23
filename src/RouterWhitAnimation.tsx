@@ -2,7 +2,7 @@ import NotFound from "./NotFound.tsx";
 import Home from "./views/Home.tsx";
 import { useLocation } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import Two from "./views/articles/Two.tsx";
+import ReactRouterAnimaciones from "./views/articles/ReactRouterAnimaciones.tsx";
 
 function RoutesWithAnimation() {
   const location = useLocation();
@@ -10,7 +10,10 @@ function RoutesWithAnimation() {
   return (
     <Routes location={location}>
       <Route path="/" element={<Home />} />
-      <Route path="/two" element={<Two />} />
+      <Route
+        path="/article-react-router-animaciones"
+        element={<ReactRouterAnimaciones />}
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

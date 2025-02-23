@@ -31,7 +31,7 @@ p {
 }
 
 .row2 p {
-  text-align: justify;
+  text-align: start;
   color: rgba(179, 179, 179, 0.589);
   font-weight: 600;
 }

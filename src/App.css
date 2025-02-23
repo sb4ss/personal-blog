@@ -192,6 +192,10 @@ p a:hover::after {
     font-size: 12px;
     width: 270px;
   }
+  h2,
+  h3 {
+    font-size: 16px;
+  }
 }
 
 /* Dispositivos medianos (tablets, 576px a 767px) */

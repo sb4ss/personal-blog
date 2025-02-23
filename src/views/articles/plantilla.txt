@@ -1,0 +1,33 @@
+import "../../components/general.css";
+import "../../App.css";
+import CodeBlock from "../../components/code/CodeBlock";
+import Succes from "../../components/info/Succes";
+import Error from "../../components/info/Error";
+import { motion } from "motion/react";
+import Back from "../../components/Back";
+
+function Two() {
+  const exampleCode = ``;
+
+  return (
+    <motion.div
+      className="container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+    >
+      <div className="article">
+        <Back />
+        <h2>Ejemplo de articulo</h2>
+        <p className="article-p"> <p/>
+
+        <CodeBlock code={exampleCode} language="tsx" filename="ejemplo.tsx" />
+        <Succes data="Avaliable to SO " />
+
+
+      </div>
+    </motion.div>
+  );
+}
+
+export default Articulo;
