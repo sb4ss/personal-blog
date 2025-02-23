@@ -124,8 +124,69 @@ export default Home;`;
         En cada página, usaremos el componente motion de Framer Motion para
         definir la animación de entrada y salida. Ejemplo de Home.jsx
       </p>
+      <br />
 
       <CodeBlock code={exampleCode4} language="jsx" filename="Home.jsx" />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <h3>Algunos ejemplos de animaciones</h3>
+      <p className="article-p">1. Desvanecimiento (Fade In/Out)</p>
+      <br />
+      <CodeBlock
+        code={`const fadeVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};`}
+        language="jsx"
+        filename=""
+      />
+      <br />
+      <p className="article-p">2. Desplazamiento Vertical (Slide Up/Down)</p>
+      <br />
+
+      <CodeBlock
+        code={`const fadeVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};`}
+        language="jsx"
+        filename=""
+      />
+      <br />
+
+      <p className="article-p">3. Rotación (Rotate In/Out)</p>
+      <br />
+      <CodeBlock
+        code={`const rotateVariants = {
+    initial: { opacity: 0, rotate: -90 },
+    animate: { opacity: 1, rotate: 0 },
+    exit: { opacity: 0, rotate: 90 },
+};`}
+        language="jsx"
+        filename=""
+      />
+      <br />
+
+      <p className="article-p">4. Escalado (Zoom In/Out)</p>
+      <br />
+
+      <CodeBlock
+        code={`const zoomVariants = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.8 },
+};`}
+        language="jsx"
+        filename=""
+      />
+      <br />
+      <br />
+      <br />
     </motion.div>
   );
 }
