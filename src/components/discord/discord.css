@@ -1,0 +1,22 @@
+.discord-presence {
+  transform-origin: top;
+}
+
+@media (max-width: 575px) {
+  .discord-presence {
+    scale: 0.7;
+    transform-origin: top;
+  }
+}
+
+/* Dispositivos medianos (tablets, 576px a 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .discord-presence {
+    scale: 0.9;
+    transform-origin: top;
+  }
+}
+
+/* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+}
