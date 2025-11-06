@@ -93,8 +93,8 @@ function Home() {
       )}
 
       <p className="link">
-        This project is linked to my portfolio
-        <a href="https://sb4ss.vercel.app"> go check it out.</a>
+        This blog is linked to my portfolio
+        <a href="https://sb4ss.vercel.app"> go check it out :)</a>
       </p>
       <Content />
     </motion.div>
