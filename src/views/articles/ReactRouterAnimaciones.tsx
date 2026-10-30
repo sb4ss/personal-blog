@@ -1,19 +1,14 @@
-// Importaciones por defecto
-
 import "../../components/general.css";
 import "../../App.css";
 import CodeBlock from "../../components/code/CodeBlock";
 import { motion } from "motion/react";
 import Back from "../../components/Back";
-
-// importaciones opcionales
+import ArticleMeta from "../../components/ArticleMeta";
+import ArticleFooter from "../../components/ArticleFooter";
 
 function ReactRouterAnimaciones() {
   const exampleCode = `npm install react-router-dom framer-motion`;
-  const exampleCode2 = `import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+  const exampleCode2 = `import { BrowserRouter as Router } from "react-router-dom";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 
 function App() {
@@ -51,9 +46,9 @@ export default AnimatedRoutes;`;
   const exampleCode4 = `import { motion } from "framer-motion";
 
 const pageVariants = {
-  initial: { opacity: 0, x: -50 },
+  initial: { opacity: 0, x: -40 },
   animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: 50 },
+  exit: { opacity: 0, x: 40 },
 };
 
 function Home() {
@@ -63,7 +58,7 @@ function Home() {
       animate="animate"
       exit="exit"
       variants={pageVariants}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
     >
       <h1>Página de Inicio</h1>
     </motion.div>
@@ -81,114 +76,95 @@ export default Home;`;
     >
       <div className="article">
         <Back />
-        <h2>Animaciones con React router</h2>
+
+        <h2>React Router con animaciones</h2>
+
+        <ArticleMeta date="23 feb 2025" tag="React" readTime="3 min de lectura" />
+
+        <img
+          src="img1.png"
+          alt="React Router y Framer Motion animaciones"
+          className="article-img"
+        />
+
         <p className="article-p">
-          Las animaciones de transición pueden mejorar la experiencia del
-          usuario al navegar entre diferentes páginas en una aplicación web.
-          aprenderemos cómo agregar animaciones de transición a una aplicación
-          React utilizando React Router y Framer Motion.
+          Las animaciones de transición fluidas transforman una aplicación web común en una experiencia que se siente nativa y moderna.
+          En este artículo aprenderemos cómo sincronizar <mark>React Router v7</mark> con <span className="highlight-purple">Framer Motion</span> usando el componente clave <code>AnimatePresence</code>.
         </p>
 
-        <h3>Instalación de Dependencias</h3>
-        <CodeBlock code={exampleCode} language="" filename="" />
-        <br />
-        <br />
-        <br />
-
-        <h3>Configurando React Router</h3>
+        <h3>1. Instalación de Dependencias</h3>
         <p className="article-p">
-          Crea un archivo App.jsx y configura las rutas utilizando
-          react-router-dom.
+          Instala tanto el enrutador como la librería de animaciones:
+        </p>
+        <CodeBlock code={exampleCode} language="bash" filename="terminal" />
+
+        <h3>2. Configurando React Router</h3>
+        <p className="article-p">
+          En tu archivo <code>App.jsx</code> envuelve tus rutas en un componente dedicado (<code>AnimatedRoutes</code>) para aislar la lógica de animación:
         </p>
         <CodeBlock code={exampleCode2} language="jsx" filename="App.jsx" />
-        <br />
-        <br />
-        <br />
-        <h3>Creando un Componente para las Rutas con Animaciones</h3>
+
+        <h3>3. Creando el componente AnimatedRoutes</h3>
         <p className="article-p">
-          Para manejar las animaciones de transición, utilizaremos el componente
-          AnimatePresence de Framer Motion.
+          Para que <strong>Framer Motion</strong> reconozca cuándo una página sale y otra entra, es obligatorio pasar la propiedad <code>key={"{location.pathname}"}</code> al elemento <code>&lt;Routes&gt;</code> y activar <code>mode="wait"</code>:
         </p>
         <CodeBlock
           code={exampleCode3}
           language="jsx"
           filename="AnimatedRoutes.jsx"
         />
-      </div>
 
-      <br />
-      <br />
+        <h3>4. Agregando animaciones a las páginas</h3>
+        <p className="article-p">
+          En cada página o vista, envolvemos el contenido en un componente <code>motion.div</code> que especifica las variantes <strong>initial</strong>, <strong>animate</strong> y <strong>exit</strong>:
+        </p>
+        <CodeBlock code={exampleCode4} language="jsx" filename="Home.jsx" />
 
-      <h3>Agregando Animaciones a las Páginas</h3>
-      <p className="article-p">
-        En cada página, usaremos el componente motion de Framer Motion para
-        definir la animación de entrada y salida. Ejemplo de Home.jsx
-      </p>
-      <br />
-
-      <CodeBlock code={exampleCode4} language="jsx" filename="Home.jsx" />
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <h3>Algunos ejemplos de animaciones</h3>
-      <p className="article-p">1. Desvanecimiento (Fade In/Out)</p>
-      <br />
-      <CodeBlock
-        code={`const fadeVariants = {
+        <h3>5. Catálogo de variantes útiles</h3>
+        <p className="article-p">
+          <strong>A. Desvanecimiento suave (Fade):</strong>
+        </p>
+        <CodeBlock
+          code={`const fadeVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 },
 };`}
-        language="jsx"
-        filename=""
-      />
-      <br />
-      <p className="article-p">2. Desplazamiento Vertical (Slide Up/Down)</p>
-      <br />
+          language="javascript"
+          filename="fadeVariants.js"
+        />
 
-      <CodeBlock
-        code={`const fadeVariants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
+        <p className="article-p">
+          <strong>B. Desplazamiento Vertical (Slide Up/Down):</strong>
+        </p>
+        <CodeBlock
+          code={`const slideVariants = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -30 },
 };`}
-        language="jsx"
-        filename=""
-      />
-      <br />
+          language="javascript"
+          filename="slideVariants.js"
+        />
 
-      <p className="article-p">3. Rotación (Rotate In/Out)</p>
-      <br />
-      <CodeBlock
-        code={`const rotateVariants = {
-    initial: { opacity: 0, rotate: -90 },
-    animate: { opacity: 1, rotate: 0 },
-    exit: { opacity: 0, rotate: 90 },
-};`}
-        language="jsx"
-        filename=""
-      />
-      <br />
-
-      <p className="article-p">4. Escalado (Zoom In/Out)</p>
-      <br />
-
-      <CodeBlock
-        code={`const zoomVariants = {
-  initial: { opacity: 0, scale: 0.8 },
+        <p className="article-p">
+          <strong>C. Escalado sutil (Scale In/Out):</strong>
+        </p>
+        <CodeBlock
+          code={`const zoomVariants = {
+  initial: { opacity: 0, scale: 0.95 },
   animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.8 },
+  exit: { opacity: 0, scale: 0.95 },
 };`}
-        language="jsx"
-        filename=""
-      />
-      <br />
-      <br />
-      <br />
+          language="javascript"
+          filename="zoomVariants.js"
+        />
+
+        <ArticleFooter />
+      </div>
     </motion.div>
   );
 }
 
 export default ReactRouterAnimaciones;
+

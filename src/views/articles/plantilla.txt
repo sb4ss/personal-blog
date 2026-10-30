@@ -3,11 +3,12 @@ import "../../App.css";
 import CodeBlock from "../../components/code/CodeBlock";
 import Succes from "../../components/info/Succes";
 import Error from "../../components/info/Error";
+import Alert from "../../components/info/Alert";
 import { motion } from "motion/react";
 import Back from "../../components/Back";
 
-function Two() {
-  const exampleCode = ``;
+function Articulo() {
+  const exampleCode = `console.log("Hola mundo");`;
 
   return (
     <motion.div
@@ -18,13 +19,21 @@ function Two() {
     >
       <div className="article">
         <Back />
-        <h2>Ejemplo de articulo</h2>
-        <p className="article-p"> <p/>
+        <h2>Título del Artículo</h2>
+        <p className="article-p">
+          Introducción o contexto del artículo...
+        </p>
 
-        <CodeBlock code={exampleCode} language="tsx" filename="ejemplo.tsx" />
-        <Succes data="Avaliable to SO " />
+        <h3>Subtítulo de sección</h3>
+        <p className="article-p">
+          Explicación detallada con ejemplos prácticos.
+        </p>
 
+        <CodeBlock code={exampleCode} language="typescript" filename="ejemplo.ts" />
 
+        <Succes data="Consejo o recomendación importante." />
+        {/* <Alert data="Nota o aviso relevante." /> */}
+        {/* <Error data="Advertencia sobre un error común a evitar." /> */}
       </div>
     </motion.div>
   );
