@@ -57,7 +57,13 @@
 }
 
 /* Código en línea dentro de párrafos */
-.article code {
+.article p code,
+.article li code,
+.article h1 code,
+.article h2 code,
+.article h3 code,
+.article h4 code,
+.article :not(pre):not(.code-container) > code {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   font-size: 0.88em;
   padding: 2px 7px;

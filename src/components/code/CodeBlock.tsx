@@ -58,15 +58,32 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
       <SyntaxHighlighter
         language={language}
         style={oneDark}
+        wrapLongLines={true}
+        className="code-syntax"
         customStyle={{
-          background: "#08080a",
+          background: "#0d1117",
+          backgroundColor: "#0d1117",
           padding: "16px",
-          borderRadius: "0 0 10px 10px",
-          fontSize: "13px",
+          margin: 0,
+          border: "none",
+          borderRadius: "0 0 14px 14px",
+          fontSize: "13.5px",
+          lineHeight: 1.6,
           fontFamily:
             "'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace",
-          border: "none",
-          margin: 0,
+        }}
+        codeTagProps={{
+          style: {
+            background: "transparent",
+            backgroundColor: "transparent",
+            padding: 0,
+            margin: 0,
+            border: "none",
+            borderRadius: 0,
+            boxShadow: "none",
+            fontSize: "inherit",
+            lineHeight: "inherit",
+          },
         }}
       >
         {code}
