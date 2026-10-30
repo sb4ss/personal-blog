@@ -1,0 +1,58 @@
+{
+  "header": {
+    "articlesBy": "Articles by",
+    "portfolioLinked": "This blog is linked to my portfolio",
+    "checkItOut": "go check it out",
+    "statusOnline": "Online",
+    "statusIdle": "Idle",
+    "statusDnd": "Do Not Disturb",
+    "statusOffline": "Offline"
+  },
+  "search": {
+    "placeholder": "Search by title, technology, or description...",
+    "clear": "Clear search"
+  },
+  "filter": {
+    "all": "All",
+    "published": "Published",
+    "upcoming": "Coming Soon",
+    "noResults": "No articles found matching your search."
+  },
+  "card": {
+    "upcoming": "Coming Soon",
+    "likes": "likes"
+  },
+  "article": {
+    "back": "Back to posts",
+    "backAll": "Back to all posts",
+    "scrollTop": "Scroll to top",
+    "readTime": "{{count}} min read"
+  },
+  "like": {
+    "ctaTitle": "Did you like this article?",
+    "ctaTitleLiked": "Thanks for your support!",
+    "ctaText": "If this post brought you value or you learned something new, leave a public like.",
+    "ctaTextLiked": "Your like has been registered successfully.",
+    "button": "Like",
+    "buttonLiked": "Liked",
+    "tooltip": "Like this article (Publicly visible)",
+    "tooltipLiked": "Liked (Click to remove)"
+  },
+  "modal": {
+    "discordStatus": "View Discord status",
+    "close": "Close modal"
+  },
+  "notFound": {
+    "title": "404 Page not found",
+    "text": "You seem to be lost,",
+    "goBack": "do you want to go back?"
+  },
+  "lang": {
+    "es": "Español",
+    "en": "English",
+    "ru": "Русский",
+    "pl": "Polski",
+    "de": "Deutsch",
+    "fr": "Français"
+  }
+}

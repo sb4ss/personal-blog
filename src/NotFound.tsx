@@ -1,18 +1,21 @@
 import { motion } from "motion/react";
 import "./notfound.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const NotFound = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.div
-      className="notfound"
+      className="notfound notranslate"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <h2>404 Page not found :(</h2>
+      <h2>{t("notFound.title")}</h2>
       <p>
-        You seem to be lost, <Link to="/">¿do you want to go back?</Link>
+        {t("notFound.text")} <Link to="/">{t("notFound.goBack")}</Link>
       </p>
     </motion.div>
   );

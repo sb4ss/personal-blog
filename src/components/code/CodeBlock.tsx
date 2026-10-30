@@ -24,7 +24,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   };
 
   return (
-    <div className="code-container">
+    <div className="code-container notranslate" translate="no">
       <div className="code-header">
         <div className="mac-dots" aria-hidden="true">
           <span className="dot dot-red" />
@@ -58,10 +58,16 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
       <SyntaxHighlighter
         language={language}
         style={oneDark}
-        showLineNumbers={true}
-        wrapLongLines={true}
-        wrapLines={true}
-        className="code-syntax"
+        customStyle={{
+          background: "#08080a",
+          padding: "16px",
+          borderRadius: "0 0 10px 10px",
+          fontSize: "13px",
+          fontFamily:
+            "'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace",
+          border: "none",
+          margin: 0,
+        }}
       >
         {code}
       </SyntaxHighlighter>
@@ -70,4 +76,3 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
 };
 
 export default CodeBlock;
-

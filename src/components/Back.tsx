@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import { LuArrowLeft } from "react-icons/lu";
 import "./back.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "./LanguageSelector/LanguageSelector";
 
 function Back() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,15 +30,15 @@ function Back() {
         style={{ width: `${scrollProgress}%` }}
         aria-hidden="true"
       />
-      <div className="back-wrapper">
-        <Link to="/" className="back-btn" aria-label="Volver a los artículos">
+      <div className="back-wrapper notranslate">
+        <Link to="/" className="back-btn" aria-label={t("article.back")}>
           <LuArrowLeft className="back-icon" />
-          <span>Volver a entradas</span>
+          <span>{t("article.back")}</span>
         </Link>
+        <LanguageSelector />
       </div>
     </>
   );
 }
 
 export default Back;
-

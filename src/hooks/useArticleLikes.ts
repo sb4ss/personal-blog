@@ -1,11 +1,19 @@
 import { useState, useEffect, useCallback } from "react";
 import { articles } from "../data/articles";
 
-const STORAGE_KEY_LIKES = "sb4ss_blog_likes_cache";
-const STORAGE_KEY_USER_LIKED = "sb4ss_blog_user_liked_articles";
-const EVENT_NAME = "sb4ss_likes_updated";
+const STORAGE_KEY_LIKES = "sb4ss_blog_likes_cache_v2";
+const STORAGE_KEY_USER_LIKED = "sb4ss_blog_user_liked_articles_v2";
+const EVENT_NAME = "sb4ss_likes_updated_v2";
 const API_BASE = "https://countapi.mileshilliard.com/api/v1";
-const NAMESPACE = "sb4ss-blog-v1";
+const NAMESPACE = "sb4ss-blog-v2";
+
+// Limpiar inmediatamente memorias previas con contadores inflados
+try {
+  localStorage.removeItem("sb4ss_blog_likes_cache");
+  localStorage.removeItem("sb4ss_blog_user_liked_articles");
+} catch {
+  // Ignorar en entornos sin window/localStorage
+}
 
 export function getDefaultLikes(articleIdOrUrl: string): number {
   const cleanId = articleIdOrUrl.replace(/^\/|article-/, "");
@@ -19,12 +27,7 @@ export function getDefaultLikes(articleIdOrUrl: string): number {
   if (article && typeof article.likes === "number") {
     return article.likes;
   }
-  let hash = 0;
-  for (let i = 0; i < cleanId.length; i++) {
-    hash = (hash << 5) - hash + cleanId.charCodeAt(i);
-    hash |= 0;
-  }
-  return 20 + Math.abs(hash % 35);
+  return 0;
 }
 
 function getApiKey(cleanId: string): string {
@@ -64,7 +67,7 @@ export function useArticleLikes(articleIdOrUrl: string) {
     return !!userLiked[cleanId];
   });
 
-  // Fetch real global likes from the cloud API on mount
+  // Sincronizar con el contador global en la nube al montar
   useEffect(() => {
     let isMounted = true;
 
@@ -72,7 +75,7 @@ export function useArticleLikes(articleIdOrUrl: string) {
       try {
         const res = await fetch(`${API_BASE}/get/${apiKey}`);
         if (!res.ok) {
-          // Si no existe la llave todavía, la inicializamos con el valor base
+          // Inicializar limpio en 0 si no existe
           await fetch(`${API_BASE}/set/${apiKey}?value=${defaultLikes}`);
           if (isMounted) {
             setLikes(defaultLikes);
@@ -82,17 +85,16 @@ export function useArticleLikes(articleIdOrUrl: string) {
 
         const data = await res.json();
         if (typeof data.value === "number") {
-          const finalCount = Math.max(data.value, defaultLikes);
+          const finalCount = Math.max(0, data.value);
           if (isMounted) {
             setLikes(finalCount);
-            // Guardar en cache local
             const cache = getAllLikesCache();
             cache[cleanId] = finalCount;
             localStorage.setItem(STORAGE_KEY_LIKES, JSON.stringify(cache));
           }
         }
       } catch {
-        // En caso de fallo de red, el valor por defecto/local sigue disponible
+        // En caso de fallo de red, se mantiene el valor local limpio
       }
     }
 
@@ -139,9 +141,8 @@ export function useArticleLikes(articleIdOrUrl: string) {
       const nextLiked = !currentlyLiked;
       const nextCount = nextLiked
         ? currentCount + 1
-        : Math.max(defaultLikes, currentCount - 1);
+        : Math.max(0, currentCount - 1);
 
-      // Actualización optimista inmediata (0ms lag para el usuario)
       cache[cleanId] = nextCount;
       userLiked[cleanId] = nextLiked;
 
@@ -158,15 +159,14 @@ export function useArticleLikes(articleIdOrUrl: string) {
       // Notificar a todos los componentes en pantalla
       window.dispatchEvent(new CustomEvent(EVENT_NAME));
 
-      // Persistir en la nube para que toda la gente lo vea
+      // Persistir en la nube
       try {
         if (nextLiked) {
-          // Incrementa el contador global en la nube
           const res = await fetch(`${API_BASE}/hit/${apiKey}`);
           if (res.ok) {
             const data = await res.json();
             if (typeof data.value === "number") {
-              const cloudVal = Math.max(data.value, nextCount);
+              const cloudVal = Math.max(nextCount, data.value);
               cache[cleanId] = cloudVal;
               localStorage.setItem(STORAGE_KEY_LIKES, JSON.stringify(cache));
               setLikes(cloudVal);
@@ -174,11 +174,10 @@ export function useArticleLikes(articleIdOrUrl: string) {
             }
           }
         } else {
-          // Si quita el like, actualizamos el valor en la nube
           await fetch(`${API_BASE}/set/${apiKey}?value=${nextCount}`);
         }
       } catch {
-        // En caso de fallo de red, se mantiene el estado optimista local
+        // En caso de fallo de red, se mantiene el estado local
       }
     },
     [cleanId, apiKey, defaultLikes]

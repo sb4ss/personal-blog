@@ -1,0 +1,58 @@
+{
+  "header": {
+    "articlesBy": "Articles par",
+    "portfolioLinked": "Ce blog est lié à mon portfolio",
+    "checkItOut": "allez y jeter un œil",
+    "statusOnline": "En ligne",
+    "statusIdle": "Inactif",
+    "statusDnd": "Ne pas déranger",
+    "statusOffline": "Hors ligne"
+  },
+  "search": {
+    "placeholder": "Rechercher par titre, technologie ou description...",
+    "clear": "Effacer la recherche"
+  },
+  "filter": {
+    "all": "Tous",
+    "published": "Publiés",
+    "upcoming": "À venir",
+    "noResults": "Aucun article correspondant à votre recherche."
+  },
+  "card": {
+    "upcoming": "À venir",
+    "likes": "j'aime"
+  },
+  "article": {
+    "back": "Retour aux articles",
+    "backAll": "Retour à tous les articles",
+    "scrollTop": "Haut de page",
+    "readTime": "{{count}} min de lecture"
+  },
+  "like": {
+    "ctaTitle": "Avez-vous aimé cet article ?",
+    "ctaTitleLiked": "Merci pour votre soutien !",
+    "ctaText": "Si cet article vous a été utile ou si vous avez appris quelque chose, laissez un j'aime public.",
+    "ctaTextLiked": "Votre j'aime a bien été enregistré.",
+    "button": "J'aime",
+    "buttonLiked": "Aimé",
+    "tooltip": "Aimer cet article",
+    "tooltipLiked": "Aimé (cliquer pour retirer)"
+  },
+  "modal": {
+    "discordStatus": "Voir le statut Discord",
+    "close": "Fermer"
+  },
+  "notFound": {
+    "title": "404 Page non trouvée",
+    "text": "Vous semblez perdu,",
+    "goBack": "voulez-vous revenir ?"
+  },
+  "lang": {
+    "es": "Español",
+    "en": "English",
+    "ru": "Русский",
+    "pl": "Polski",
+    "de": "Deutsch",
+    "fr": "Français"
+  }
+}

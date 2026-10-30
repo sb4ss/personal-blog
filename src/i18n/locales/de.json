@@ -1,0 +1,58 @@
+{
+  "header": {
+    "articlesBy": "Artikel von",
+    "portfolioLinked": "Dieser Blog ist mit meinem Portfolio verlinkt",
+    "checkItOut": "schau es dir an",
+    "statusOnline": "Online",
+    "statusIdle": "Abwesend",
+    "statusDnd": "Bitte nicht stören",
+    "statusOffline": "Offline"
+  },
+  "search": {
+    "placeholder": "Nach Titel, Technologie oder Beschreibung suchen...",
+    "clear": "Suche löschen"
+  },
+  "filter": {
+    "all": "Alle",
+    "published": "Veröffentlicht",
+    "upcoming": "Demnächst",
+    "noResults": "Keine Artikel gefunden, die der Suche entsprechen."
+  },
+  "card": {
+    "upcoming": "Demnächst",
+    "likes": "Gefällt mir"
+  },
+  "article": {
+    "back": "Zurück zu Artikeln",
+    "backAll": "Zurück zu allen Artikeln",
+    "scrollTop": "Nach oben",
+    "readTime": "{{count}} Min. Lesezeit"
+  },
+  "like": {
+    "ctaTitle": "Hat dir dieser Artikel gefallen?",
+    "ctaTitleLiked": "Vielen Dank für deine Unterstützung!",
+    "ctaText": "Wenn dieser Beitrag dir geholfen hat, hinterlasse ein öffentliches Like.",
+    "ctaTextLiked": "Dein Like wurde erfolgreich registriert.",
+    "button": "Gefällt mir",
+    "buttonLiked": "Gefällt dir",
+    "tooltip": "Diesen Beitrag liken",
+    "tooltipLiked": "Gefällt dir bereits (Klicken zum Entfernen)"
+  },
+  "modal": {
+    "discordStatus": "Discord-Status ansehen",
+    "close": "Schließen"
+  },
+  "notFound": {
+    "title": "404 Seite nicht gefunden",
+    "text": "Du scheinst dich verlaufen zu haben,",
+    "goBack": "möchtest du zurückkehren?"
+  },
+  "lang": {
+    "es": "Español",
+    "en": "English",
+    "ru": "Русский",
+    "pl": "Polski",
+    "de": "Deutsch",
+    "fr": "Français"
+  }
+}

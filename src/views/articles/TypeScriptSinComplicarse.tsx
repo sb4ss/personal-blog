@@ -10,12 +10,12 @@ import ArticleMeta from "../../components/ArticleMeta";
 import ArticleFooter from "../../components/ArticleFooter";
 
 function TypeScriptSinComplicarse() {
-  const inferenceCode = `// ❌ Redundante: no necesitas tipar lo que TypeScript ya deduce
+  const inferenceCode = `// Redundante: no necesitas tipar lo que TypeScript ya deduce
 const name: string = "Sebastian";
 const count: number = 0;
 const numbers: number[] = [1, 2, 3];
 
-// ✅ Limpio: deja que la inferencia haga el trabajo
+// Limpio: deja que la inferencia haga el trabajo
 const name = "Sebastian";
 const count = 0;
 const numbers = [1, 2, 3];`;

@@ -1,0 +1,58 @@
+{
+  "header": {
+    "articlesBy": "Artykuły autorstwa",
+    "portfolioLinked": "Ten blog jest połączony z moim portfolio",
+    "checkItOut": "zobacz je tutaj",
+    "statusOnline": "Dostępny",
+    "statusIdle": "Zaraz wracam",
+    "statusDnd": "Nie przeszkadzać",
+    "statusOffline": "Niedostępny"
+  },
+  "search": {
+    "placeholder": "Szukaj po tytule, technologii lub opisie...",
+    "clear": "Wyczyść wyszukiwanie"
+  },
+  "filter": {
+    "all": "Wszystkie",
+    "published": "Opublikowane",
+    "upcoming": "Wkrótce",
+    "noResults": "Nie znaleziono artykułów pasujących do wyszukiwania."
+  },
+  "card": {
+    "upcoming": "Wkrótce",
+    "likes": "polubień"
+  },
+  "article": {
+    "back": "Powrót do wpisów",
+    "backAll": "Powrót do wszystkich wpisów",
+    "scrollTop": "Do góry",
+    "readTime": "{{count}} min czytania"
+  },
+  "like": {
+    "ctaTitle": "Spodobał Ci się ten artykuł?",
+    "ctaTitleLiked": "Dziękuję za wsparcie!",
+    "ctaText": "Jeśli ten wpis przyniósł Ci wartość lub nauczył Cię czegoś nowego, zostaw polubienie.",
+    "ctaTextLiked": "Twoje polubienie zostało zapisane.",
+    "button": "Polub",
+    "buttonLiked": "Polubiono",
+    "tooltip": "Polub ten artykuł",
+    "tooltipLiked": "Polubiono (kliknij, aby cofnąć)"
+  },
+  "modal": {
+    "discordStatus": "Zobacz status Discord",
+    "close": "Zamknij"
+  },
+  "notFound": {
+    "title": "404 Strona nie znaleziona",
+    "text": "Wygląda na to, że się zgubiłeś,",
+    "goBack": "chcesz wrócić?"
+  },
+  "lang": {
+    "es": "Español",
+    "en": "English",
+    "ru": "Русский",
+    "pl": "Polski",
+    "de": "Deutsch",
+    "fr": "Français"
+  }
+}

@@ -6,33 +6,39 @@ import { useState, useRef, useEffect } from "react";
 import DiscordProfile from "../components/discord/DiscordProfile";
 import { createPortal } from "react-dom";
 import "../components/general.css";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../components/LanguageSelector/LanguageSelector";
 
 function Home() {
   const [profile, setProfile] = useState(false);
   const [statusClass, setStatusClass] = useState("Online");
   const profileRef = useRef<HTMLDivElement>(null);
-  const [status, setStatus] = useState("");
+  const [statusKey, setStatusKey] = useState("header.statusOnline");
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetch("https://api.lanyard.rest/v1/users/741020084113244180")
       .then((res) => res.json())
       .then((data) => {
-        if (data?.data?.discord_status == "online") {
+        if (data?.data?.discord_status === "online") {
           setStatusClass("Online");
-          setStatus("Online");
+          setStatusKey("header.statusOnline");
         }
-        if (data?.data?.discord_status == "idle") {
+        if (data?.data?.discord_status === "idle") {
           setStatusClass("Idle");
-          setStatus("Idle");
+          setStatusKey("header.statusIdle");
         }
-        if (data?.data?.discord_status == "dnd") {
+        if (data?.data?.discord_status === "dnd") {
           setStatusClass("Dnd");
-          setStatus("Do Not Disturb");
+          setStatusKey("header.statusDnd");
         }
-        if (data?.data?.discord_status == "offline") {
+        if (data?.data?.discord_status === "offline") {
           setStatusClass("Offline");
-          setStatus("Offline");
+          setStatusKey("header.statusOffline");
         }
+      })
+      .catch(() => {
+        // Fallback default
       });
   }, []);
 
@@ -65,33 +71,39 @@ function Home() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <div className="title-bg">
-        <h2 className="title">Articles by</h2>
-        <button
-          className="profile"
-          onClick={handleUserDiscord}
-          aria-label="Ver estado de Discord"
-        >
-          <div className="user">
-            <img src="tux.gif" alt="s_b4ss" className="img" />
-            <h3>s_b4ss</h3>
-          </div>
+      <div className="home-header-row notranslate">
+        <div className="title-bg">
+          <h2 className="title">{t("header.articlesBy")}</h2>
+          <button
+            className="profile"
+            onClick={handleUserDiscord}
+            aria-label={t("modal.discordStatus")}
+          >
+            <div className="user">
+              <img src="tux.gif" alt="s_b4ss" className="img" />
+              <h3>s_b4ss</h3>
+            </div>
 
-          <div className="status">
-            {status && <span className="status-label">{status}</span>}
-            <div className={`status-dot ${statusClass}`}></div>
-            <FaDiscord className="discord" />
-          </div>
-        </button>
+            <div className="status">
+              <span className="status-label">{t(statusKey)}</span>
+              <div className={`status-dot ${statusClass}`}></div>
+              <FaDiscord className="discord" />
+            </div>
+          </button>
+        </div>
+
+        <div className="home-lang-container">
+          <LanguageSelector />
+        </div>
       </div>
 
       {profile &&
         createPortal(
-          <div className="discord-modal-container">
+          <div className="discord-modal-container notranslate">
             <div
               className="overlay"
               onClick={() => setProfile(false)}
-              aria-label="Cerrar modal"
+              aria-label={t("modal.close")}
             />
             <div
               ref={profileRef}
@@ -104,16 +116,17 @@ function Home() {
           document.body
         )}
 
-      <p className="link">
-        This blog is linked to my portfolio
+      <p className="link notranslate">
+        {t("header.portfolioLinked")}{" "}
         <a
           href="https://porfoliosb4ss.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          {" "}go check it out :)
+          {t("header.checkItOut")}
         </a>
       </p>
+
       <Content />
     </motion.div>
   );

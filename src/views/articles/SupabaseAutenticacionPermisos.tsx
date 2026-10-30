@@ -91,7 +91,7 @@ WITH CHECK (auth.uid() = user_id);`;
 import { supabase } from "../lib/supabaseClient";
 
 export async function fetchUserNotes() {
-  // ✅ Con RLS activado, ya NO necesitas hacer .eq('user_id', user.id) obligatoriamente.
+  // Con RLS activado, ya NO necesitas hacer .eq('user_id', user.id) obligatoriamente.
   // PostgreSQL filtra automáticamente las filas basándose en el JWT del usuario autenticado.
   const { data, error } = await supabase
     .from("notas")

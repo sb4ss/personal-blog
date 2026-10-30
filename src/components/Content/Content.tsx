@@ -3,12 +3,15 @@ import "./content.css";
 import Card from "../Card/Card";
 import { articles } from "../../data/articles";
 import { LuSearch, LuX } from "react-icons/lu";
+import { useTranslation } from "react-i18next";
 
 type FilterTab = "all" | "published" | "upcoming";
 
 function Content() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<FilterTab>("all");
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language?.slice(0, 2);
 
   const filteredArticles = useMemo(() => {
     // Priorizar publicados (más recientes primero) y luego los de próximamente
@@ -29,17 +32,31 @@ function Content() {
       return true;
     });
 
-    // Filtrar por texto de búsqueda (título, descripción o tags)
+    // Filtrar por texto de búsqueda (título, descripción o tags en idioma original o traducido)
     if (!searchQuery.trim()) return tabFiltered;
 
     const query = searchQuery.toLowerCase().trim();
-    return tabFiltered.filter(
-      (article) =>
+    return tabFiltered.filter((article) => {
+      const tr =
+        currentLang && currentLang !== "es"
+          ? article.translations?.[currentLang as keyof typeof article.translations]
+          : null;
+
+      const titleMatches =
         article.title.toLowerCase().includes(query) ||
+        (tr?.title && tr.title.toLowerCase().includes(query));
+
+      const contentMatches =
         article.content.toLowerCase().includes(query) ||
-        article.tags?.some((tag) => tag.toLowerCase().includes(query))
-    );
-  }, [searchQuery, activeTab]);
+        (tr?.content && tr.content.toLowerCase().includes(query));
+
+      const tagsMatches =
+        article.tags?.some((tag) => tag.toLowerCase().includes(query)) ||
+        tr?.tags?.some((tag) => tag.toLowerCase().includes(query));
+
+      return titleMatches || contentMatches || tagsMatches;
+    });
+  }, [searchQuery, activeTab, currentLang]);
 
   return (
     <div className="content">
@@ -49,7 +66,7 @@ function Content() {
           <input
             type="text"
             className="search-input"
-            placeholder="Buscar por título, tecnología o descripción..."
+            placeholder={t("search.placeholder")}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -57,31 +74,31 @@ function Content() {
             <button
               className="search-clear-btn"
               onClick={() => setSearchQuery("")}
-              aria-label="Limpiar búsqueda"
+              aria-label={t("search.clear")}
             >
               <LuX />
             </button>
           )}
         </div>
 
-        <div className="filter-tabs">
+        <div className="filter-tabs notranslate">
           <button
             className={`filter-tab ${activeTab === "all" ? "active" : ""}`}
             onClick={() => setActiveTab("all")}
           >
-            Todos ({articles.length})
+            {t("filter.all")} ({articles.length})
           </button>
           <button
             className={`filter-tab ${activeTab === "published" ? "active" : ""}`}
             onClick={() => setActiveTab("published")}
           >
-            Publicados ({articles.filter((a) => a.published).length})
+            {t("filter.published")} ({articles.filter((a) => a.published).length})
           </button>
           <button
             className={`filter-tab ${activeTab === "upcoming" ? "active" : ""}`}
             onClick={() => setActiveTab("upcoming")}
           >
-            Próximamente ({articles.filter((a) => !a.published).length})
+            {t("filter.upcoming")} ({articles.filter((a) => !a.published).length})
           </button>
         </div>
       </div>
@@ -97,20 +114,12 @@ function Content() {
             url={article.url}
             published={article.published}
             tag={article.tags?.[0]}
+            translations={article.translations}
           />
         ))
       ) : (
-        <div className="no-results">
-          <p>No se encontraron artículos para "{searchQuery}".</p>
-          <button
-            className="reset-search-btn"
-            onClick={() => {
-              setSearchQuery("");
-              setActiveTab("all");
-            }}
-          >
-            Ver todos los artículos
-          </button>
+        <div className="no-results-message">
+          <p>{t("filter.noResults")}</p>
         </div>
       )}
     </div>

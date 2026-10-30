@@ -1,0 +1,58 @@
+{
+  "header": {
+    "articlesBy": "Статьи от",
+    "portfolioLinked": "Этот блог связан с моим портфолио",
+    "checkItOut": "перейти и посмотреть",
+    "statusOnline": "В сети",
+    "statusIdle": "Не активен",
+    "statusDnd": "Не беспокоить",
+    "statusOffline": "Не в сети"
+  },
+  "search": {
+    "placeholder": "Поиск по названию, технологии или описанию...",
+    "clear": "Очистить поиск"
+  },
+  "filter": {
+    "all": "Все",
+    "published": "Опубликованные",
+    "upcoming": "Скоро",
+    "noResults": "Статей по вашему запросу не найдено."
+  },
+  "card": {
+    "upcoming": "Скоро",
+    "likes": "лайков"
+  },
+  "article": {
+    "back": "Назад к статьям",
+    "backAll": "Вернуться ко всем статьям",
+    "scrollTop": "Наверх",
+    "readTime": "{{count}} мин чтения"
+  },
+  "like": {
+    "ctaTitle": "Понравилась статья?",
+    "ctaTitleLiked": "Спасибо за поддержку!",
+    "ctaText": "Если эта статья была полезна или вы узнали что-то новое, поставьте лайк.",
+    "ctaTextLiked": "Ваш лайк успешно сохранен.",
+    "button": "Лайк",
+    "buttonLiked": "Вам нравится",
+    "tooltip": "Поставить лайк",
+    "tooltipLiked": "Вам нравится (нажмите, чтобы убрать)"
+  },
+  "modal": {
+    "discordStatus": "Статус в Discord",
+    "close": "Закрыть"
+  },
+  "notFound": {
+    "title": "404 Страница не найдена",
+    "text": "Похоже, вы заблудились,",
+    "goBack": "хотите вернуться?"
+  },
+  "lang": {
+    "es": "Español",
+    "en": "English",
+    "ru": "Русский",
+    "pl": "Polski",
+    "de": "Deutsch",
+    "fr": "Français"
+  }
+}
