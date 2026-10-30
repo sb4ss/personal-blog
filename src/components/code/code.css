@@ -2,98 +2,143 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: rgba(73, 73, 73, 0.1);
-  border-radius: 8px;
-  padding: 16px;
-  font-family: "Fira Code", monospace;
-  width: auto;
-  padding-left: 30px;
-  padding-right: 30px;
-
-  max-width: 100%;
-  overflow: hidden; /* Evita desbordamiento no deseado */
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  width: 68%;
+  box-sizing: border-box;
+  margin: 14px 0;
 }
 
-.code-movile {
-  width: 800px;
-}
-
-/* Estilo del nombre del archivo */
-.code-filename {
-  margin-bottom: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ffffffcc; /* Blanco con transparencia */
-}
-
-/* Botón de copiado */
-.copy-button {
+.code-header {
   display: flex;
   align-items: center;
-  gap: 5px;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: #e0e0e0;
-  color: #282c34;
-  border: none;
-  padding: 6px 12px;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mac-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red {
+  background-color: #ff5f56;
+}
+
+.dot-yellow {
+  background-color: #ffbd2e;
+}
+
+.dot-green {
+  background-color: #27c93f;
+}
+
+.code-filename {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+}
+
+.file-icon {
   font-size: 14px;
-  font-weight: bold;
-  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.copy-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  opacity: 0.8;
+  transition: all 0.2s ease;
 }
 
 .copy-button:hover {
-  opacity: 1;
-  background: #d6d6d6;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
-/* Ajuste del código para evitar desbordamiento */
-pre {
-  white-space: pre-wrap; /* Permite saltos de línea en palabras largas */
-  word-wrap: break-word; /* Rompe palabras si es necesario */
-  overflow-x: auto; /* Si el código es muy largo, permite scroll horizontal */
-  max-width: 100%;
-  padding: 10px;
-  border-radius: 6px;
+.copy-button.copied {
+  background: rgba(48, 209, 88, 0.12);
+  color: #30d158;
+  border-color: rgba(48, 209, 88, 0.3);
 }
 
-/* Hacer el botón más visible en pantallas pequeñas */
-@media (max-width: 600px) {
-  .copy-button {
-    top: 8px;
-    right: 8px;
-    padding: 4px 8px;
-    font-size: 12px;
+.copy-icon {
+  font-size: 13px;
+}
+
+.code-container pre {
+  margin: 0 !important;
+  background: transparent !important;
+  padding: 16px !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
+  overflow-x: auto !important;
+  box-sizing: border-box !important;
+}
+
+.code-syntax {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 575px) {
+  .code-container {
+    width: 90%;
   }
 
-  .code-container {
-    width: 95%;
+  .code-header {
+    padding: 8px 12px;
   }
 
   .code-filename {
-    font-size: 12px;
+    font-size: 11px;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  .code-movile {
-    font-size: 12px;
-    width: 90%;
+
+  .copy-button {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  .code-container pre {
+    font-size: 12px !important;
+    padding: 12px !important;
   }
 }
 
-/* Dispositivos medianos (tablets, 576px a 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
-  .code-movile {
-    width: 500px;
+  .code-container {
+    width: 85%;
   }
 }
 
-/* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  .code-movile {
-    width: 600px;
-  }
-}

@@ -1,13 +1,12 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useState } from "react";
-import { LuClipboardCopy } from "react-icons/lu";
-import "./code.css"; // Asegúrate de importar el CSS
+import { LuClipboardCopy, LuCheck, LuFileCode } from "react-icons/lu";
+import "./code.css";
 
-// Definir los props del componente
 interface CodeBlockProps {
   code: string;
-  language?: string; // Opcional, por defecto será "javascript"
+  language?: string;
   filename: string;
 }
 
@@ -21,23 +20,48 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setTimeout(() => setCopied(false), 1800);
   };
 
   return (
     <div className="code-container">
-      {filename && <div className="code-filename">{filename}</div>}
-      <button className="copy-button" onClick={handleCopy}>
-        <LuClipboardCopy />
-        {copied ? "Copied!" : "Copy"}
-      </button>
+      <div className="code-header">
+        <div className="mac-dots" aria-hidden="true">
+          <span className="dot dot-red" />
+          <span className="dot dot-yellow" />
+          <span className="dot dot-green" />
+        </div>
+        {filename && (
+          <div className="code-filename">
+            <LuFileCode className="file-icon" />
+            <span>{filename}</span>
+          </div>
+        )}
+        <button
+          className={`copy-button ${copied ? "copied" : ""}`}
+          onClick={handleCopy}
+          aria-label="Copiar código"
+        >
+          {copied ? (
+            <>
+              <LuCheck className="copy-icon" />
+              <span>Copiado</span>
+            </>
+          ) : (
+            <>
+              <LuClipboardCopy className="copy-icon" />
+              <span>Copiar</span>
+            </>
+          )}
+        </button>
+      </div>
       <SyntaxHighlighter
         language={language}
         style={oneDark}
         showLineNumbers={true}
         wrapLongLines={true}
         wrapLines={true}
-        className="code-movile"
+        className="code-syntax"
       >
         {code}
       </SyntaxHighlighter>
@@ -46,3 +70,4 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
 };
 
 export default CodeBlock;
+
