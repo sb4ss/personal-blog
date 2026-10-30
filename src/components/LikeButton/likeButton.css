@@ -1,0 +1,351 @@
+/* =========================================================
+   SISTEMA DE LIKES - APPLE DESIGN & MICRO-ANIMACIONES
+   ========================================================= */
+
+/* Botón cápsula Badge (en Card y Header de Artículo) */
+.like-badge-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.65);
+  border-radius: 6px;
+  height: 20px;
+  padding: 0 7px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+}
+
+.like-badge-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.like-badge-btn:active {
+  transform: scale(0.94);
+}
+
+/* Estado cuando el usuario ya dio like */
+.like-badge-btn.liked {
+  background: rgba(255, 45, 85, 0.1);
+  border-color: rgba(255, 45, 85, 0.3);
+  color: #ff375f;
+  box-shadow: 0 0 10px rgba(255, 45, 85, 0.15);
+}
+
+.like-badge-btn.liked:hover {
+  background: rgba(255, 45, 85, 0.15);
+  border-color: rgba(255, 45, 85, 0.4);
+}
+
+/* Icono de corazón */
+.like-icon {
+  font-size: 11.5px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.like-icon.filled {
+  color: #ff2d55;
+}
+
+/* Conteo tabular numérico */
+.like-count {
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+/* Variante Card: Píldora compacta y discreta alineada con los metadatos */
+.like-badge-btn.like-variant-card {
+  height: 22px;
+  min-height: 22px;
+  max-height: 22px;
+  padding: 0 8px;
+  font-size: 11px;
+  gap: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Variante Meta: integrada con el article-meta-row del artículo */
+.like-badge-btn.like-variant-meta {
+  height: 22px;
+  min-height: 22px;
+  max-height: 22px;
+  padding: 0 8px;
+  font-size: 11px;
+  gap: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   ANIMACIÓN DE PARTÍCULAS BURST (CORAZONES FLOTANTES)
+   ========================================================= */
+
+.particles-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.particle {
+  position: absolute;
+  font-size: 14px;
+  opacity: 0;
+}
+
+.particle.p1 {
+  animation: floatBurstLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.particle.p2 {
+  animation: floatBurstCenter 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+
+.particle.p3 {
+  animation: floatBurstRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+@keyframes floatBurstLeft {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-24px, -32px) scale(1.2) rotate(-15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-34px, -50px) scale(0.8) rotate(-25deg);
+  }
+}
+
+@keyframes floatBurstCenter {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-2px, -38px) scale(1.3) rotate(5deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-4px, -58px) scale(0.8) rotate(10deg);
+  }
+}
+
+@keyframes floatBurstRight {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(22px, -30px) scale(1.2) rotate(15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(32px, -48px) scale(0.8) rotate(25deg);
+  }
+}
+
+/* Efecto Pop de resorte en el botón */
+.pop-anim {
+  animation: buttonSpring 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes buttonSpring {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.18);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   CAJA INTERACTIVA DE FEEDBACK (CTA AL FINAL DEL ARTÍCULO)
+   ========================================================= */
+
+.article-like-cta {
+  width: 68%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin: 24px 0 12px 0;
+  box-sizing: border-box;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+.article-like-cta:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.like-cta-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.like-cta-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 45, 85, 0.08);
+  border: 1px solid rgba(255, 45, 85, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(255, 45, 85, 0.12);
+}
+
+.like-cta-heart {
+  font-size: 19px;
+  color: #ff375f;
+}
+
+.like-cta-heart.filled {
+  animation: buttonSpring 0.4s ease;
+}
+
+.like-cta-texts h4 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.01em;
+}
+
+.like-cta-texts p {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.like-cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 5px 12px;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  user-select: none;
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
+.like-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+.like-cta-btn:active {
+  transform: scale(0.96);
+}
+
+.like-cta-btn.liked {
+  background: rgba(255, 45, 85, 0.15);
+  border-color: rgba(255, 45, 85, 0.4);
+  color: #ff375f;
+  box-shadow: 0 0 20px rgba(255, 45, 85, 0.25);
+}
+
+.like-btn-icon {
+  font-size: 18px;
+}
+
+.like-btn-icon.filled {
+  color: #ff2d55;
+}
+
+.like-cta-pill {
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.like-cta-btn.liked .like-cta-pill {
+  background: rgba(255, 45, 85, 0.28);
+  color: #ffffff;
+}
+
+@media (max-width: 575px) {
+  .article-like-cta {
+    width: 90%;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .like-cta-btn {
+    justify-content: center;
+    width: 100%;
+    padding: 11px 16px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .article-like-cta {
+    width: 85%;
+  }
+}
