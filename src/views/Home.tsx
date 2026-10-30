@@ -4,6 +4,7 @@ import Content from "../components/Content/Content";
 import { FaDiscord } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 import DiscordProfile from "../components/discord/DiscordProfile";
+import { createPortal } from "react-dom";
 import "../components/general.css";
 
 function Home() {
@@ -34,30 +35,27 @@ function Home() {
         }
       });
   }, []);
+
   const handleUserDiscord = () => {
     setProfile(true);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      profileRef.current &&
-      profileRef.current instanceof HTMLElement &&
-      !profileRef.current.contains(event.target as Node)
-    ) {
-      setProfile(false);
-    }
-  };
-
   useEffect(() => {
     if (profile) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          setProfile(false);
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
     } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "";
     }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
   }, [profile]);
 
   return (
@@ -69,32 +67,52 @@ function Home() {
     >
       <div className="title-bg">
         <h2 className="title">Articles by</h2>
-        <button className="profile" onClick={handleUserDiscord}>
+        <button
+          className="profile"
+          onClick={handleUserDiscord}
+          aria-label="Ver estado de Discord"
+        >
           <div className="user">
-            <img src="tux.gif" alt="" className="img" />
+            <img src="tux.gif" alt="s_b4ss" className="img" />
             <h3>s_b4ss</h3>
           </div>
 
           <div className="status">
-            <p>{status}</p>
-            <div className={statusClass}></div>
+            {status && <span className="status-label">{status}</span>}
+            <div className={`status-dot ${statusClass}`}></div>
             <FaDiscord className="discord" />
           </div>
         </button>
       </div>
 
-      {profile && (
-        <>
-          <div className="overlay" onClick={() => setProfile(false)}></div>
-          <div ref={profileRef} className="profile-section">
-            <DiscordProfile />
-          </div>
-        </>
-      )}
+      {profile &&
+        createPortal(
+          <div className="discord-modal-container">
+            <div
+              className="overlay"
+              onClick={() => setProfile(false)}
+              aria-label="Cerrar modal"
+            />
+            <div
+              ref={profileRef}
+              className="profile-section"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <DiscordProfile />
+            </div>
+          </div>,
+          document.body
+        )}
 
       <p className="link">
         This blog is linked to my portfolio
-        <a href="https://sb4ss.vercel.app"> go check it out :)</a>
+        <a
+          href="https://porfoliosb4ss.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}go check it out :)
+        </a>
       </p>
       <Content />
     </motion.div>
