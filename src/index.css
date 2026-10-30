@@ -20,6 +20,7 @@ html {
 
   /* fondo base negro separado */
   background: #131313;
+  overflow-x: hidden;
 }
 
 /* Capa de cuadricula: fija, encima del fondo negro y debajo del contenido */
@@ -70,11 +71,12 @@ body::before {
 body {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 @media (max-width: 575px) {

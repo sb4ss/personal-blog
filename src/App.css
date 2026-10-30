@@ -59,140 +59,186 @@ p a:hover::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .profile {
-  width: 400px;
-  border: none;
-  cursor: pointer;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 20px;
-  background-color: #20232c;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  color:rgb(209, 209, 209);
+  gap: 14px;
+  background-color: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border-radius: 9999px;
+  padding: 5px 14px 5px 6px;
+  color: #f5f5f7;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  width: auto;
+  margin: 0;
 }
+
+.profile:hover {
+  background-color: rgba(255, 255, 255, 0.065);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.profile:active {
+  transform: scale(0.98);
+}
+
 .user {
   display: flex;
   align-items: center;
-  justify-self: center;
+  gap: 8px;
+}
+
+.profile .img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 0;
+}
+
+.user h3 {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #f5f5f7;
+  margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .status {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 7px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.profile img {
-  margin-right: 10px;
-  border-radius: 40px;
-  height: 40px;
-  width: 50px;
+.status-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  margin: 0;
 }
 
-.profile .Online {
-  margin: 10px;
-  position: relative;
-  width: 15px;
-  height: 15px;
+.status-dot {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: #00dd63;
-  box-shadow: 0px 0px 10px 10px #00ff73;
-  animation: glow 4s infinite alternate ease-in-out;
+  flex-shrink: 0;
 }
 
-@keyframes glow {
-  0% {
-    box-shadow: 0px 0px 20px 5px rgba(0, 255, 115, 0.281);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0px 0px 20px 3px rgba(0, 255, 115, 0.562);
-    transform: scale(1.05);
-  }
-  100% {
-    box-shadow: 0px 0px 15px 5px rgba(0, 255, 115, 0.4);
-    transform: scale(1);
-  }
+.status-dot.Online {
+  background-color: #30d158;
+  box-shadow: 0 0 0 2px rgba(48, 209, 88, 0.25);
+}
+
+.status-dot.Idle {
+  background-color: #ff9f0a;
+  box-shadow: 0 0 0 2px rgba(255, 159, 10, 0.25);
+}
+
+.status-dot.Dnd {
+  background-color: #ff453a;
+  box-shadow: 0 0 0 2px rgba(255, 69, 58, 0.25);
+}
+
+.status-dot.Offline {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .discord {
-  margin: 10px;
-  font-size: 30px;
-  color: #5575e7;
+  font-size: 16px;
+  color: #5865f2;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  margin: 0;
 }
 
-.profile-section {
-  position: absolute;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  width: auto;
+.profile:hover .discord {
+  opacity: 1;
+}
+
+.discord-modal-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .overlay {
-  bottom: 0;
-  top: 0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 98vw;
+  position: fixed;
+  inset: 0;
+  width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.192); /* Oscurece el fondo */
-  backdrop-filter: blur(4px); /* Le da un ligero desenfoque */
-  z-index: 10;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  animation: overlayFadeIn 0.2s ease;
 }
 
-.profile .Offline {
-  margin: 10px;
-  position: relative;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #616161;
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.profile .Idle {
-  margin: 10px;
+.profile-section {
   position: relative;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ffc830;
-  box-shadow: 0px 0px 30px 2px #ffc8307a;
+  z-index: 1;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 100%;
+  max-height: 90vh;
+  overflow: auto;
 }
 
-.profile .Dnd {
-  margin: 10px;
-  position: relative;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ff3030;
-  box-shadow: 0px 0px 30px 2px #ff30307a;
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 575px) {
   .title {
     margin: 0;
     margin-top: 20px;
+    font-size: 24px;
   }
   .link {
     font-size: 12px;
   }
   .title-bg {
     flex-direction: column;
+    gap: 12px;
   }
   .container {
     width: auto;
   }
   .profile {
     font-size: 12px;
-    width: 270px;
   }
   h2,
   h3 {
@@ -204,13 +250,10 @@ p a:hover::after {
 @media (min-width: 576px) and (max-width: 767px) {
   .title-bg {
     flex-direction: column;
+    gap: 14px;
   }
   .container {
     width: 100%;
-  }
-  .profile {
-    font-size: 12px;
-    width: 300px;
   }
   .title {
     margin: 0;
@@ -221,17 +264,14 @@ p a:hover::after {
 /* Dispositivos grandes (tablets en horizontal y laptops pequeñas, 768px a 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .title {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 0;
   }
 
   .title-bg {
-    flex-direction: column;
+    gap: 16px;
   }
   .container {
     width: auto;
-  }
-  .profile {
-    width: 400px;
   }
 }
